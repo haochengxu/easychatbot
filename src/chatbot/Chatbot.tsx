@@ -52,9 +52,14 @@ function Chatbot(props: ChatbotProps) {
     }
   }, [messages]);
 
+  // Initializes the chatbot.
   useEffect(() => {
-    setChatModel(initChatbot(props.chatbotType, props.apiKey));
-  }, []);
+    async function setupChatbot() {
+      const chat = await initChatbot(props.chatbotType, props.apiKey);
+      setChatModel(chat);
+    }
+    setupChatbot();
+  }, [props.chatbotType, props.apiKey]);
 
   return (
     <div className="chatbot-container">
