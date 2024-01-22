@@ -1,5 +1,5 @@
-import Je, { useState as $, useRef as jt, useEffect as Le } from "react";
-import Pt from "react-dom";
+import Je, { useState as $, useRef as Pt, useEffect as ke } from "react";
+import jt from "react-dom";
 var fe = { exports: {} }, U = {}, Fe;
 function Mt() {
   if (Fe)
@@ -16,11 +16,11 @@ function Mt() {
    * LICENSE file in the root directory of this source tree.
    */
   return t.NODE_ENV !== "production" && function() {
-    var a = Je, n = Symbol.for("react.element"), o = Symbol.for("react.portal"), s = Symbol.for("react.fragment"), u = Symbol.for("react.strict_mode"), _ = Symbol.for("react.profiler"), f = Symbol.for("react.provider"), d = Symbol.for("react.context"), R = Symbol.for("react.forward_ref"), C = Symbol.for("react.suspense"), w = Symbol.for("react.suspense_list"), E = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), P = Symbol.for("react.offscreen"), M = Symbol.iterator, S = "@@iterator";
+    var a = Je, n = Symbol.for("react.element"), o = Symbol.for("react.portal"), s = Symbol.for("react.fragment"), u = Symbol.for("react.strict_mode"), g = Symbol.for("react.profiler"), f = Symbol.for("react.provider"), d = Symbol.for("react.context"), R = Symbol.for("react.forward_ref"), C = Symbol.for("react.suspense"), w = Symbol.for("react.suspense_list"), E = Symbol.for("react.memo"), S = Symbol.for("react.lazy"), j = Symbol.for("react.offscreen"), M = Symbol.iterator, O = "@@iterator";
     function N(e) {
       if (e === null || typeof e != "object")
         return null;
-      var r = M && e[M] || e[S];
+      var r = M && e[M] || e[O];
       return typeof r == "function" ? r : null;
     }
     var I = a.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
@@ -44,7 +44,7 @@ function Mt() {
     var et = !1, tt = !1, rt = !1, nt = !1, at = !1, he;
     he = Symbol.for("react.module.reference");
     function st(e) {
-      return !!(typeof e == "string" || typeof e == "function" || e === s || e === _ || at || e === u || e === C || e === w || nt || e === P || et || tt || rt || typeof e == "object" && e !== null && (e.$$typeof === O || e.$$typeof === E || e.$$typeof === f || e.$$typeof === d || e.$$typeof === R || // This needs to include all possible module reference object
+      return !!(typeof e == "string" || typeof e == "function" || e === s || e === g || at || e === u || e === C || e === w || nt || e === j || et || tt || rt || typeof e == "object" && e !== null && (e.$$typeof === S || e.$$typeof === E || e.$$typeof === f || e.$$typeof === d || e.$$typeof === R || // This needs to include all possible module reference object
       // types supported by any Flight configuration anywhere since
       // we don't know which Flight build this will end up being used
       // with.
@@ -72,7 +72,7 @@ function Mt() {
           return "Fragment";
         case o:
           return "Portal";
-        case _:
+        case g:
           return "Profiler";
         case u:
           return "StrictMode";
@@ -94,7 +94,7 @@ function Mt() {
           case E:
             var c = e.displayName || null;
             return c !== null ? c : x(e.type) || "Memo";
-          case O: {
+          case S: {
             var v = e, p = v._payload, h = v._init;
             try {
               return x(h(p));
@@ -212,50 +212,50 @@ function Mt() {
           }), typeof Reflect == "object" && Reflect.construct) {
             try {
               Reflect.construct(h, []);
-            } catch (j) {
-              c = j;
+            } catch (P) {
+              c = P;
             }
             Reflect.construct(e, [], h);
           } else {
             try {
               h.call();
-            } catch (j) {
-              c = j;
+            } catch (P) {
+              c = P;
             }
             e.call(h.prototype);
           }
         } else {
           try {
             throw Error();
-          } catch (j) {
-            c = j;
+          } catch (P) {
+            c = P;
           }
           e();
         }
-      } catch (j) {
-        if (j && c && typeof j.stack == "string") {
-          for (var l = j.stack.split(`
+      } catch (P) {
+        if (P && c && typeof P.stack == "string") {
+          for (var l = P.stack.split(`
 `), T = c.stack.split(`
-`), m = l.length - 1, y = T.length - 1; m >= 1 && y >= 0 && l[m] !== T[y]; )
+`), _ = l.length - 1, y = T.length - 1; _ >= 1 && y >= 0 && l[_] !== T[y]; )
             y--;
-          for (; m >= 1 && y >= 0; m--, y--)
-            if (l[m] !== T[y]) {
-              if (m !== 1 || y !== 1)
+          for (; _ >= 1 && y >= 0; _--, y--)
+            if (l[_] !== T[y]) {
+              if (_ !== 1 || y !== 1)
                 do
-                  if (m--, y--, y < 0 || l[m] !== T[y]) {
+                  if (_--, y--, y < 0 || l[_] !== T[y]) {
                     var A = `
-` + l[m].replace(" at new ", " at ");
+` + l[_].replace(" at new ", " at ");
                     return e.displayName && A.includes("<anonymous>") && (A = A.replace("<anonymous>", e.displayName)), typeof e == "function" && X.set(e, A), A;
                   }
-                while (m >= 1 && y >= 0);
+                while (_ >= 1 && y >= 0);
               break;
             }
         }
       } finally {
         ae = !1, re.current = p, ct(), Error.prepareStackTrace = v;
       }
-      var F = e ? e.displayName || e.name : "", ke = F ? q(F) : "";
-      return typeof e == "function" && X.set(e, ke), ke;
+      var F = e ? e.displayName || e.name : "", Le = F ? q(F) : "";
+      return typeof e == "function" && X.set(e, Le), Le;
     }
     function lt(e, r, i) {
       return be(e, !1);
@@ -283,7 +283,7 @@ function Mt() {
             return lt(e.render);
           case E:
             return z(e.type, r, i);
-          case O: {
+          case S: {
             var c = e, v = c._payload, p = c._init;
             try {
               return z(p(v), r, i);
@@ -313,8 +313,8 @@ function Mt() {
                 throw T.name = "Invariant Violation", T;
               }
               l = e[h](r, h, c, i, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
-            } catch (m) {
-              l = m;
+            } catch (_) {
+              l = _;
             }
             l && !(l instanceof Error) && (Z(v), b("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", c || "React class", i, h, typeof l), Z(null)), l instanceof Error && !(l.message in Se) && (Se[l.message] = !0, Z(v), b("Failed %s type: %s", i, l.message), Z(null));
           }
@@ -431,9 +431,9 @@ function Mt() {
         for (p in r)
           Q.call(r, p) && !pt.hasOwnProperty(p) && (h[p] = r[p]);
         if (e && e.defaultProps) {
-          var m = e.defaultProps;
-          for (p in m)
-            h[p] === void 0 && (h[p] = m[p]);
+          var _ = e.defaultProps;
+          for (p in _)
+            h[p] === void 0 && (h[p] = _[p]);
         }
         if (l || T) {
           var y = typeof e == "function" ? e.displayName || e.name || "Unknown" : e;
@@ -443,7 +443,7 @@ function Mt() {
       }
     }
     var ie = I.ReactCurrentOwner, Ne = I.ReactDebugCurrentFrame;
-    function L(e) {
+    function k(e) {
       if (e) {
         var r = e._owner, i = z(e.type, e._source, r ? r.type : null);
         Ne.setExtraStackFrame(i);
@@ -478,7 +478,7 @@ Check your code at ` + r + ":" + i + ".";
         return "";
       }
     }
-    var je = {};
+    var Pe = {};
     function Ot(e) {
       {
         var r = xe();
@@ -491,17 +491,17 @@ Check the top-level render call using <` + i + ">.");
         return r;
       }
     }
-    function Pe(e, r) {
+    function je(e, r) {
       {
         if (!e._store || e._store.validated || e.key != null)
           return;
         e._store.validated = !0;
         var i = Ot(r);
-        if (je[i])
+        if (Pe[i])
           return;
-        je[i] = !0;
+        Pe[i] = !0;
         var c = "";
-        e && e._owner && e._owner !== ie.current && (c = " It was passed a child from " + x(e._owner.type) + "."), L(e), b('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', i, c), L(null);
+        e && e._owner && e._owner !== ie.current && (c = " It was passed a child from " + x(e._owner.type) + "."), k(e), b('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', i, c), k(null);
       }
     }
     function Me(e, r) {
@@ -511,7 +511,7 @@ Check the top-level render call using <` + i + ">.");
         if (se(e))
           for (var i = 0; i < e.length; i++) {
             var c = e[i];
-            ue(c) && Pe(c, r);
+            ue(c) && je(c, r);
           }
         else if (ue(e))
           e._store && (e._store.validated = !0);
@@ -519,7 +519,7 @@ Check the top-level render call using <` + i + ">.");
           var v = N(e);
           if (typeof v == "function" && v !== e.entries)
             for (var p = v.call(e), h; !(h = p.next()).done; )
-              ue(h.value) && Pe(h.value, r);
+              ue(h.value) && je(h.value, r);
         }
       }
     }
@@ -553,11 +553,11 @@ Check the top-level render call using <` + i + ">.");
         for (var r = Object.keys(e.props), i = 0; i < r.length; i++) {
           var c = r[i];
           if (c !== "children" && c !== "key") {
-            L(e), b("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", c), L(null);
+            k(e), b("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", c), k(null);
             break;
           }
         }
-        e.ref !== null && (L(e), b("Invalid attribute `ref` supplied to `React.Fragment`."), L(null));
+        e.ref !== null && (k(e), b("Invalid attribute `ref` supplied to `React.Fragment`."), k(null));
       }
     }
     function De(e, r, i, c, v, p) {
@@ -568,8 +568,8 @@ Check the top-level render call using <` + i + ">.");
           (e === void 0 || typeof e == "object" && e !== null && Object.keys(e).length === 0) && (l += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.");
           var T = St(v);
           T ? l += T : l += xe();
-          var m;
-          e === null ? m = "null" : se(e) ? m = "array" : e !== void 0 && e.$$typeof === n ? (m = "<" + (x(e.type) || "Unknown") + " />", l = " Did you accidentally export a JSX literal instead of a component?") : m = typeof e, b("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", m, l);
+          var _;
+          e === null ? _ = "null" : se(e) ? _ = "array" : e !== void 0 && e.$$typeof === n ? (_ = "<" + (x(e.type) || "Unknown") + " />", l = " Did you accidentally export a JSX literal instead of a component?") : _ = typeof e, b("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", _, l);
         }
         var y = bt(e, r, i, v, p);
         if (y == null)
@@ -616,21 +616,21 @@ function Dt() {
     return H;
   Ye = 1;
   var t = Je, a = Symbol.for("react.element"), n = Symbol.for("react.fragment"), o = Object.prototype.hasOwnProperty, s = t.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, u = { key: !0, ref: !0, __self: !0, __source: !0 };
-  function _(f, d, R) {
-    var C, w = {}, E = null, O = null;
-    R !== void 0 && (E = "" + R), d.key !== void 0 && (E = "" + d.key), d.ref !== void 0 && (O = d.ref);
+  function g(f, d, R) {
+    var C, w = {}, E = null, S = null;
+    R !== void 0 && (E = "" + R), d.key !== void 0 && (E = "" + d.key), d.ref !== void 0 && (S = d.ref);
     for (C in d)
       o.call(d, C) && !u.hasOwnProperty(C) && (w[C] = d[C]);
     if (f && f.defaultProps)
       for (C in d = f.defaultProps, d)
         w[C] === void 0 && (w[C] = d[C]);
-    return { $$typeof: a, type: f, key: E, ref: O, props: w, _owner: s.current };
+    return { $$typeof: a, type: f, key: E, ref: S, props: w, _owner: s.current };
   }
-  return H.Fragment = n, H.jsx = _, H.jsxs = _, H;
+  return H.Fragment = n, H.jsx = g, H.jsxs = g, H;
 }
-var kt = {};
-kt.NODE_ENV === "production" ? fe.exports = Dt() : fe.exports = Mt();
-var g = fe.exports;
+var Lt = {};
+Lt.NODE_ENV === "production" ? fe.exports = Dt() : fe.exports = Mt();
+var m = fe.exports;
 /**
  * @license
  * Copyright 2023 Google LLC
@@ -713,17 +713,17 @@ class Be extends B {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const Lt = "https://generativelanguage.googleapis.com", Ft = "v1", Yt = "0.1.3", Gt = "genai-js";
-var k;
+const kt = "https://generativelanguage.googleapis.com", Ft = "v1", Yt = "0.1.3", Gt = "genai-js";
+var L;
 (function(t) {
   t.GENERATE_CONTENT = "generateContent", t.STREAM_GENERATE_CONTENT = "streamGenerateContent", t.COUNT_TOKENS = "countTokens", t.EMBED_CONTENT = "embedContent", t.BATCH_EMBED_CONTENTS = "batchEmbedContents";
-})(k || (k = {}));
+})(L || (L = {}));
 class V {
   constructor(a, n, o, s) {
     this.model = a, this.task = n, this.apiKey = o, this.stream = s;
   }
   toString() {
-    let a = `${Lt}/${Ft}/models/${this.model}:${this.task}`;
+    let a = `${kt}/${Ft}/models/${this.model}:${this.task}`;
     return this.stream && (a += "?alt=sse"), a;
   }
 }
@@ -809,21 +809,21 @@ function Kt(t, a, n) {
   if (!Symbol.asyncIterator)
     throw new TypeError("Symbol.asyncIterator is not defined.");
   var o = n.apply(t, a || []), s, u = [];
-  return s = {}, _("next"), _("throw"), _("return"), s[Symbol.asyncIterator] = function() {
+  return s = {}, g("next"), g("throw"), g("return"), s[Symbol.asyncIterator] = function() {
     return this;
   }, s;
-  function _(E) {
-    o[E] && (s[E] = function(O) {
-      return new Promise(function(P, M) {
-        u.push([E, O, P, M]) > 1 || f(E, O);
+  function g(E) {
+    o[E] && (s[E] = function(S) {
+      return new Promise(function(j, M) {
+        u.push([E, S, j, M]) > 1 || f(E, S);
       });
     });
   }
-  function f(E, O) {
+  function f(E, S) {
     try {
-      d(o[E](O));
-    } catch (P) {
-      w(u[0][3], P);
+      d(o[E](S));
+    } catch (j) {
+      w(u[0][3], j);
     }
   }
   function d(E) {
@@ -835,8 +835,8 @@ function Kt(t, a, n) {
   function C(E) {
     f("throw", E);
   }
-  function w(E, O) {
-    E(O), u.shift(), u.length && f(u[0][0], u[0][1]);
+  function w(E, S) {
+    E(S), u.shift(), u.length && f(u[0][0], u[0][1]);
   }
 }
 /**
@@ -890,7 +890,7 @@ function Jt(t) {
       let s = "";
       return u();
       function u() {
-        return a.read().then(({ value: _, done: f }) => {
+        return a.read().then(({ value: g, done: f }) => {
           if (f) {
             if (s.trim()) {
               o.error(new B("Failed to parse stream"));
@@ -899,7 +899,7 @@ function Jt(t) {
             o.close();
             return;
           }
-          s += _;
+          s += g;
           let d = s.match(We), R;
           for (; d; ) {
             try {
@@ -931,8 +931,8 @@ function qt(t) {
             role: s.content.role || "user",
             parts: [{ text: "" }]
           });
-          for (const _ of s.content.parts)
-            _.text && (n.candidates[u].content.parts[0].text += _.text);
+          for (const g of s.content.parts)
+            g.text && (n.candidates[u].content.parts[0].text += g.text);
         }
       }
   return n;
@@ -956,7 +956,7 @@ function qt(t) {
 async function Xe(t, a, n) {
   const o = new V(
     a,
-    k.STREAM_GENERATE_CONTENT,
+    L.STREAM_GENERATE_CONTENT,
     t,
     /* stream */
     !0
@@ -966,7 +966,7 @@ async function Xe(t, a, n) {
 async function ze(t, a, n) {
   const o = new V(
     a,
-    k.GENERATE_CONTENT,
+    L.GENERATE_CONTENT,
     t,
     /* stream */
     !1
@@ -1051,7 +1051,7 @@ class zt {
       generationConfig: (o = this.params) === null || o === void 0 ? void 0 : o.generationConfig,
       contents: [...this._history, s]
     };
-    let _;
+    let g;
     return this._sendPromise = this._sendPromise.then(() => ze(this._apiKey, this.model, u)).then((f) => {
       var d;
       if (f.response.candidates && f.response.candidates.length > 0) {
@@ -1066,8 +1066,8 @@ class zt {
         const R = te(f.response);
         R && console.warn(`sendMessage() was unsuccessful. ${R}. Inspect response object for details.`);
       }
-      _ = f;
-    }), await this._sendPromise, _;
+      g = f;
+    }), await this._sendPromise, g;
   }
   /**
    * Sends a chat message and receives the response as a
@@ -1081,8 +1081,8 @@ class zt {
       safetySettings: (n = this.params) === null || n === void 0 ? void 0 : n.safetySettings,
       generationConfig: (o = this.params) === null || o === void 0 ? void 0 : o.generationConfig,
       contents: [...this._history, s]
-    }, _ = Xe(this._apiKey, this.model, u);
-    return this._sendPromise = this._sendPromise.then(() => _).catch((f) => {
+    }, g = Xe(this._apiKey, this.model, u);
+    return this._sendPromise = this._sendPromise.then(() => g).catch((f) => {
       throw new Error(Ve);
     }).then((f) => f.response).then((f) => {
       if (f.candidates && f.candidates.length > 0) {
@@ -1095,7 +1095,7 @@ class zt {
       }
     }).catch((f) => {
       f.message !== Ve && console.error(f);
-    }), _;
+    }), g;
   }
 }
 /**
@@ -1115,7 +1115,7 @@ class zt {
  * limitations under the License.
  */
 async function Qt(t, a, n) {
-  const o = new V(a, k.COUNT_TOKENS, t, !1);
+  const o = new V(a, L.COUNT_TOKENS, t, !1);
   return (await J(o, JSON.stringify(Object.assign(Object.assign({}, n), { model: a })))).json();
 }
 /**
@@ -1135,11 +1135,11 @@ async function Qt(t, a, n) {
  * limitations under the License.
  */
 async function Zt(t, a, n) {
-  const o = new V(a, k.EMBED_CONTENT, t, !1);
+  const o = new V(a, L.EMBED_CONTENT, t, !1);
   return (await J(o, JSON.stringify(n))).json();
 }
 async function er(t, a, n) {
-  const o = new V(a, k.BATCH_EMBED_CONTENTS, t, !1), s = n.requests.map((_) => Object.assign(Object.assign({}, _), { model: `models/${a}` }));
+  const o = new V(a, L.BATCH_EMBED_CONTENTS, t, !1), s = n.requests.map((g) => Object.assign(Object.assign({}, g), { model: `models/${a}` }));
   return (await J(o, JSON.stringify({ requests: s }))).json();
 }
 /**
@@ -1244,10 +1244,10 @@ function Qe(t) {
       text: "Hello, nice to meet you. I am EasyChatbot. You can talk with me freely",
       sender: "bot"
     }
-  ]), [u, _] = $(""), f = jt(null), [d, R] = $(!1), [C, w] = $(null), E = new rr(t.apiKey);
-  async function O(S) {
+  ]), [u, g] = $(""), f = Pt(null), [d, R] = $(!1), [C, w] = $(null), E = new rr(t.apiKey);
+  async function S(O) {
     let N;
-    S === "gemini" ? N = E.getGenerativeModel({ model: "gemini-pro" }).startChat({
+    O === "gemini" ? N = E.getGenerativeModel({ model: "gemini-pro" }).startChat({
       history: [
         {
           role: "user",
@@ -1266,20 +1266,20 @@ function Qe(t) {
       })
     }, w(N);
   }
-  const P = async () => {
+  const j = async () => {
     if (u) {
-      s((S) => [
-        ...S,
+      s((O) => [
+        ...O,
         { text: u, sender: "user" }
-      ]), _(""), R(!0);
+      ]), g(""), R(!0);
       try {
         const I = (await (await C.sendMessage(u)).response).text();
         s((b) => [
           ...b,
           { text: I, sender: "bot" }
         ]);
-      } catch (S) {
-        console.error(S);
+      } catch (O) {
+        console.error(O);
       } finally {
         R(!1);
       }
@@ -1287,12 +1287,12 @@ function Qe(t) {
   }, M = () => {
     n(!a);
   };
-  return Le(() => {
+  return ke(() => {
     f.current && f.current.scrollIntoView({ behavior: "smooth" });
-  }, [o]), Le(() => {
-    O(t.chatbotType);
-  }, []), /* @__PURE__ */ g.jsxs("div", { className: "chatbot-container", children: [
-    /* @__PURE__ */ g.jsx("div", { className: "chatbot-button-container", children: !a && /* @__PURE__ */ g.jsx("div", { className: "chatbot-button-container", children: /* @__PURE__ */ g.jsx(
+  }, [o]), ke(() => {
+    S(t.chatbotType);
+  }, []), /* @__PURE__ */ m.jsxs("div", { className: "chatbot-container", children: [
+    /* @__PURE__ */ m.jsx("div", { className: "chatbot-button-container", children: !a && /* @__PURE__ */ m.jsx("div", { className: "chatbot-button-container", children: /* @__PURE__ */ m.jsx(
       "img",
       {
         onClick: M,
@@ -1300,84 +1300,55 @@ function Qe(t) {
         alt: "Chat Icon"
       }
     ) }) }),
-    a && /* @__PURE__ */ g.jsx("div", { className: "chatbot-viewer", children: /* @__PURE__ */ g.jsxs("div", { className: "chat-viewer", children: [
-      /* @__PURE__ */ g.jsxs("p", { className: "chatbot-header", children: [
+    a && /* @__PURE__ */ m.jsxs("div", { className: "chatbot-viewer", children: [
+      /* @__PURE__ */ m.jsxs("p", { className: "chatbot-header", children: [
         "Conversation with EasyChatbot",
         " ",
-        /* @__PURE__ */ g.jsx("span", { className: "close-icon", onClick: M, children: "×" })
+        /* @__PURE__ */ m.jsx("span", { className: "close-icon", onClick: M, children: "×" })
       ] }),
-      /* @__PURE__ */ g.jsxs("div", { className: "message-list", children: [
-        o.map((S, N) => /* @__PURE__ */ g.jsxs(
+      /* @__PURE__ */ m.jsxs("div", { className: "message-list", children: [
+        o.map((O, N) => /* @__PURE__ */ m.jsxs(
           "div",
           {
             className: "message-item",
             ref: N === o.length - 1 ? f : null,
             children: [
-              S.sender === "bot" && /* @__PURE__ */ g.jsxs(
-                "svg",
-                {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  viewBox: "0 0 24 24",
-                  fill: "none",
-                  stroke: "currentColor",
-                  "stroke-width": "2",
-                  "stroke-linecap": "round",
-                  "stroke-linejoin": "round",
-                  className: "bot-avatar",
-                  children: [
-                    /* @__PURE__ */ g.jsx(
-                      "rect",
-                      {
-                        x: "4",
-                        y: "4",
-                        width: "16",
-                        height: "16",
-                        rx: "2",
-                        ry: "2"
-                      }
-                    ),
-                    /* @__PURE__ */ g.jsx("circle", { cx: "9", cy: "9", r: "1" }),
-                    /* @__PURE__ */ g.jsx("circle", { cx: "15", cy: "9", r: "1" }),
-                    /* @__PURE__ */ g.jsx("polyline", { points: "8 13 12 17 16 13" })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ g.jsxs("strong", { children: [
-                S.sender === "bot" ? "EasyChatbot" : "You",
+              /* @__PURE__ */ m.jsxs("strong", { children: [
+                O.sender === "bot" ? "EasyChatbot" : "You",
                 ":"
               ] }),
-              /* @__PURE__ */ g.jsx("br", {}),
-              /* @__PURE__ */ g.jsx("p", { children: S.text })
+              /* @__PURE__ */ m.jsx("br", {}),
+              /* @__PURE__ */ m.jsx("p", { children: O.text })
             ]
           },
           N
         )),
-        d && /* @__PURE__ */ g.jsxs("div", { className: "loading", children: [
-          /* @__PURE__ */ g.jsx("div", { className: "loading-dot" }),
-          /* @__PURE__ */ g.jsx("div", { className: "loading-dot" }),
-          /* @__PURE__ */ g.jsx("div", { className: "loading-dot" })
+        d && /* @__PURE__ */ m.jsxs("div", { className: "loading", children: [
+          /* @__PURE__ */ m.jsx("div", { className: "loading-dot" }),
+          /* @__PURE__ */ m.jsx("div", { className: "loading-dot" }),
+          /* @__PURE__ */ m.jsx("div", { className: "loading-dot" })
         ] }),
         " "
       ] }),
-      /* @__PURE__ */ g.jsxs("div", { className: "chat-input-container", children: [
-        /* @__PURE__ */ g.jsx(
+      /* @__PURE__ */ m.jsxs("div", { className: "chat-input-container", children: [
+        /* @__PURE__ */ m.jsx(
           "input",
           {
             placeholder: "Message EasyChatbot...",
             value: u,
-            onKeyPress: (S) => {
-              S.key === "Enter" && P();
+            onKeyPress: (O) => {
+              O.key === "Enter" && j();
             },
-            onChange: (S) => _(S.target.value)
+            onChange: (O) => g(O.target.value)
           }
         ),
-        /* @__PURE__ */ g.jsx("button", { onClick: P, children: "Send" })
+        /* @__PURE__ */ m.jsx("button", { onClick: j, children: "Send" })
       ] })
-    ] }) })
+    ] })
   ] });
 }
-const sr = (t) => /* @__PURE__ */ g.jsx(Qe, { ...t }), or = (t, a) => {
-  Pt.render(/* @__PURE__ */ g.jsx(Qe, { ...a }), t);
+const sr = (t) => /* @__PURE__ */ m.jsx(Qe, { ...t }), or = (t, a) => {
+  jt.render(/* @__PURE__ */ m.jsx(Qe, { ...a }), t);
 };
 export {
   sr as Chatbot,
