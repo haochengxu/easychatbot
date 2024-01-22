@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import { ChatbotProps, Message, ChatbotType } from "./types";
+import { ChatbotProps, Message } from "./types";
+import { initChatbot } from "./utils";
 import "./chatbot.css";
 
 function Chatbot(props: ChatbotProps) {
@@ -15,40 +15,6 @@ function Chatbot(props: ChatbotProps) {
   const lastMessageRef = useRef<HTMLDivElement | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [chatModel, setChatModel] = useState<any>(null);
-
-  const genAI = new GoogleGenerativeAI(props.apiKey);
-
-  async function initChatbot(chatbotType: ChatbotType) {
-    let chat;
-    if (chatbotType === "gemini") {
-      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-
-      chat = model.startChat({
-        history: [
-          {
-            role: "user",
-            parts: "Hello, nice to meet you. Who are you?",
-          },
-          {
-            role: "model",
-            parts:
-              "Great to meet you. I am a nice bot named EasyChatbot that loves to chat and help you.",
-          },
-        ],
-      });
-    } else {
-      chat = {
-        sendMessage: async (message: string) => {
-          return {
-            response: {
-              text: () => `You said: ${message}`,
-            },
-          };
-        },
-      };
-    }
-    setChatModel(chat);
-  }
 
   // Handles sending a message in the chatbot.
   const handleSend = async () => {
@@ -79,10 +45,7 @@ function Chatbot(props: ChatbotProps) {
     setIsOpen(!isOpen);
   };
 
-  /**
-   * Scrolls the last message into view with smooth behavior.
-   * @param messages - The array of messages.
-   */
+  //Scrolls the last message into view with smooth behavior.
   useEffect(() => {
     if (lastMessageRef.current) {
       lastMessageRef.current.scrollIntoView({ behavior: "smooth" });
@@ -90,22 +53,19 @@ function Chatbot(props: ChatbotProps) {
   }, [messages]);
 
   useEffect(() => {
-    initChatbot(props.chatbotType);
+    setChatModel(initChatbot(props.chatbotType, props.apiKey));
   }, []);
 
   return (
     <div className="chatbot-container">
-      <div className="chatbot-button-container">
-        {!isOpen && (
-          <div className="chatbot-button-container">
-            <img
-              onClick={toggleChat}
-              src="https://cdn.chatbot.com/widget/61f28451fdd7c5000728b4f9/DSjjJVtWgP_jxGWP.png"
-              alt="Chat Icon"
-            />
-          </div>
-        )}
-      </div>
+      {!isOpen && (
+        <div className="start-img-container" onClick={toggleChat}>
+          <img
+            src="https://cdn.chatbot.com/widget/61f28451fdd7c5000728b4f9/DSjjJVtWgP_jxGWP.png"
+            alt="Chat Icon"
+          />
+        </div>
+      )}
       {isOpen && (
         <div className="chatbot-viewer">
           <p className="chatbot-header">

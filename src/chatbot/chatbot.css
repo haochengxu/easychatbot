@@ -11,14 +11,14 @@
   border-radius: 5px;
   box-shadow: 5px 5px 13px rgba(91,81,81,.4);
 }
-.chatbot-button-container {
+.start-img-container {
   width: 50px;
   height: 50px;
   position: fixed;
   right: 40px;
   bottom: 20px;
 }
-.chatbot-button-container img {
+.start-img-container img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -68,15 +68,6 @@
   color: rgb(0, 0, 0);
   padding: 10px;
 }
-.chatbot-viewer  .message-item .bot-avatar {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: middle;
-  padding-bottom: 3px;
-}
-
 
 @keyframes bounce {
   0%, 80%, 100% { 
