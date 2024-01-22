@@ -23,7 +23,7 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
         },
-        entryFileNames: `[name].[hash].js`,
+        entryFileNames: `[name].[format].[hash].js`,
         assetFileNames: `assets/[name].[hash].[ext]`
       },
     },
