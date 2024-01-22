@@ -108,72 +108,46 @@ function Chatbot(props: ChatbotProps) {
       </div>
       {isOpen && (
         <div className="chatbot-viewer">
-          <div className="chat-viewer">
-            <p className="chatbot-header">
-              Conversation with EasyChatbot{" "}
-              <span className="close-icon" onClick={toggleChat}>
-                &times;
-              </span>
-            </p>
-            <div className="message-list">
-              {messages.map((message, index) => (
-                <div
-                  className="message-item"
-                  key={index}
-                  ref={index === messages.length - 1 ? lastMessageRef : null}
-                >
-                  {message.sender === "bot" && (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="bot-avatar"
-                    >
-                      <rect
-                        x="4"
-                        y="4"
-                        width="16"
-                        height="16"
-                        rx="2"
-                        ry="2"
-                      ></rect>
-                      <circle cx="9" cy="9" r="1"></circle>
-                      <circle cx="15" cy="9" r="1"></circle>
-                      <polyline points="8 13 12 17 16 13"></polyline>
-                    </svg>
-                  )}
-                  <strong>
-                    {message.sender === "bot" ? "EasyChatbot" : "You"}:
-                  </strong>
-                  <br />
-                  <p>{message.text}</p>
-                </div>
-              ))}
-              {isLoading && (
-                <div className="loading">
-                  <div className="loading-dot"></div>
-                  <div className="loading-dot"></div>
-                  <div className="loading-dot"></div>
-                </div>
-              )}{" "}
-            </div>
-            <div className="chat-input-container">
-              <input
-                placeholder="Message EasyChatbot..."
-                value={input}
-                onKeyPress={(e) => {
-                  if (e.key === "Enter") {
-                    handleSend();
-                  }
-                }}
-                onChange={(e) => setInput(e.target.value)}
-              />
-              <button onClick={handleSend}>Send</button>
-            </div>
+          <p className="chatbot-header">
+            Conversation with EasyChatbot{" "}
+            <span className="close-icon" onClick={toggleChat}>
+              &times;
+            </span>
+          </p>
+          <div className="message-list">
+            {messages.map((message, index) => (
+              <div
+                className="message-item"
+                key={index}
+                ref={index === messages.length - 1 ? lastMessageRef : null}
+              >
+                <strong>
+                  {message.sender === "bot" ? "EasyChatbot" : "You"}:
+                </strong>
+                <br />
+                <p>{message.text}</p>
+              </div>
+            ))}
+            {isLoading && (
+              <div className="loading">
+                <div className="loading-dot"></div>
+                <div className="loading-dot"></div>
+                <div className="loading-dot"></div>
+              </div>
+            )}{" "}
+          </div>
+          <div className="chat-input-container">
+            <input
+              placeholder="Message EasyChatbot..."
+              value={input}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  handleSend();
+                }
+              }}
+              onChange={(e) => setInput(e.target.value)}
+            />
+            <button onClick={handleSend}>Send</button>
           </div>
         </div>
       )}
