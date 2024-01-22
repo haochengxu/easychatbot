@@ -1241,7 +1241,7 @@ class rr {
 function Qe(t) {
   const [a, n] = $(!1), [o, s] = $([
     {
-      text: "Hello, nice to meet you. I am EasyChatbot. You can talk with me freely",
+      text: "Hello, nice to meet you. I am EasyChatbot. You can talk with me freely.",
       sender: "bot"
     }
   ]), [u, g] = $(""), f = Pt(null), [d, R] = $(!1), [C, w] = $(null), E = new rr(t.apiKey);
@@ -1354,4 +1354,4 @@ export {
   sr as Chatbot,
   or as init
 };
-//# sourceMappingURL=main.h-l0LWpy.js.map
+//# sourceMappingURL=main.r4u5ccIM.js.map

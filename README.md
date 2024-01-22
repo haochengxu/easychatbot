@@ -10,8 +10,7 @@ So far EasyChatbot only support google gemini api, more api support will come so
 - [Development](#development)
 
 ## Demo
-Pleae visit this link to see the demo page
-
+Please visit [this link](https://codepen.io/haochengxu/pen/JjzJVgE) to see the demo page
 
 ## Usage
 

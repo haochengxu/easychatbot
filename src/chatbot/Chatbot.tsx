@@ -7,7 +7,7 @@ function Chatbot(props: ChatbotProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
-      text: "Hello, nice to meet you. I am EasyChatbot. You can talk with me freely",
+      text: "Hello, nice to meet you. I am EasyChatbot. You can talk with me freely.",
       sender: "bot",
     },
   ]);
