@@ -13,6 +13,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/main.tsx'),
       name: 'EasyChatbot',
+      formats: ['es', 'iife'],
     },
     rollupOptions: {
       // 外部化处理那些你的库中不需要的依赖
