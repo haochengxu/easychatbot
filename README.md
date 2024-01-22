@@ -1,7 +1,7 @@
 # EasyChatbot
 
-EasyChatbot is an simple chatbot that can be integrated into any webpage easily.
-So far EasyChatbot only support google gemini api, more api support will come soon.
+EasyChatbot is a simple, responsive chatbot that can be integrated into any webpage easily.
+So far EasyChatbot only support Google Gemini API, more API support will come soon.
 
 ## Table of Contents
 
@@ -14,9 +14,9 @@ Please visit [this link](https://codepen.io/haochengxu/pen/JjzJVgE) to see the d
 
 ## Usage
 
-To use EasyChatbot, you can either:
+To use EasyChatbot, you can choose the following two ways:
 
-1. Import the component from the package directly:
+1. Import the component from the package directly(will pulish to npm):
 
 ```javascript
 import { Chatbot } from "../chatbot/main";
@@ -27,8 +27,8 @@ import { Chatbot } from "../chatbot/main";
 2. Use the build output js/css file directly
 
 ```html
-<script src="./dist/easychatbot.umd.cjs"></script>
-<link rel="stylesheet" href="./dist/style.css" />
+<script src="./dist/main.[hash].js"></script>
+<link rel="stylesheet" href="./dist/asets/style.assets.[hash].css" />
 <script>
   const element = document.getElementById("root");
   EasyChatbot.init(element, {
@@ -44,5 +44,5 @@ To develop EasyChatbot, just clone this repo and run following commands in termi
 npm install
 npm run dev
 ```
-You will be able to start develop!
+You will be able to see the demo page and start development!
 
